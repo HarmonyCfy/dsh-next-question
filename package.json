@@ -1,0 +1,57 @@
+{
+  "name": "dsh-next-question",
+  "version": "0.1.0",
+  "description": "Predict the user's next message inside the main model's own reply and show it as ghost text in the composer, with zero extra model calls.",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "ghost-text",
+    "next-question",
+    "prediction",
+    "composer"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0",
+    "node": "^22.19 || >=24"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-name/dsh-next-question.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-name/dsh-next-question/issues"
+  },
+  "homepage": "https://github.com/your-name/dsh-next-question#readme"
+}

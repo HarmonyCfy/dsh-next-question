@@ -1,0 +1,5 @@
+# Registers the only host row this bundle owns. The browser half rides the same
+# package name through its dsh.client declaration.
+- insert:
+    - id: next-question
+      name: dsh-next-question
