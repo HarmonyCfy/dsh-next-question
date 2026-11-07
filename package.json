@@ -48,10 +48,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-name/dsh-next-question.git"
+    "url": "git+https://github.com/HarmonyCfy/dsh-next-question.git"
   },
   "bugs": {
-    "url": "https://github.com/your-name/dsh-next-question/issues"
+    "url": "https://github.com/HarmonyCfy/dsh-next-question/issues"
   },
-  "homepage": "https://github.com/your-name/dsh-next-question#readme"
+  "homepage": "https://github.com/HarmonyCfy/dsh-next-question#readme"
 }
