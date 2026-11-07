@@ -32,15 +32,17 @@
 
 ## 安装
 
-要求 DSH `>= 0.2.1-rc.2`、Node `^22.19 || >=24`。
+要求 DSH `>= 0.2.1-rc.2`、Node `^22.19 || >=24`。包目前只发布在 GitHub，未发布到 npm。
 
-### 通过插件管理器
+### 通过插件管理器（推荐）
 
 ```bash
-dsh plugin --profile <profile> add dsh-next-question
+dsh plugin --profile <profile> add github:HarmonyCfy/dsh-next-question
 ```
 
-然后完全退出 DSH 再重新打开。
+`<profile>` 换成你的 profile 名（Desktop 用 `desktop`，Web 用 `web`）。pnpm 会把 `github:` 简写解析成 commit 锁定的 tarball 直接安装，插件管理器会自动把 `dsh-next-question` 写进 profile 的 `dsh.profile.bundles`。然后完全退出 DSH 再重新打开。
+
+> 如果安装时 pnpm 提示构建脚本被阻止（allowBuilds），按提示把打印出来的 key 加进 profile 的 `pnpm-workspace.yaml` 后重跑；本包无构建脚本，正常不会遇到。
 
 ### 手动安装
 
@@ -49,7 +51,7 @@ dsh plugin --profile <profile> add dsh-next-question
 ```json
 {
   "dependencies": {
-    "dsh-next-question": "^0.1.0"
+    "dsh-next-question": "github:HarmonyCfy/dsh-next-question"
   },
   "dsh": {
     "profile": {
@@ -60,6 +62,8 @@ dsh plugin --profile <profile> add dsh-next-question
 ```
 
 执行 `pnpm install`，然后完全退出 DSH 再打开。包自带的 `cordis.patch.yml` 会插入 `next-question` 行。
+
+> 建议固定到具体 commit（`github:HarmonyCfy/dsh-next-question#<commit>`），避免后续推送改变行为。
 
 ## 使用
 
